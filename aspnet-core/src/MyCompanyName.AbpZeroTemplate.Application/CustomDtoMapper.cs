@@ -32,6 +32,8 @@ using MyCompanyName.AbpZeroTemplate.Friendships;
 using MyCompanyName.AbpZeroTemplate.Friendships.Cache;
 using MyCompanyName.AbpZeroTemplate.Friendships.Dto;
 using MyCompanyName.AbpZeroTemplate.Localization.Dto;
+using MyCompanyName.AbpZeroTemplate.Masters;
+using MyCompanyName.AbpZeroTemplate.Masters.Events.Dto;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Dto;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.HostDashboard.Dto;
@@ -164,6 +166,10 @@ namespace MyCompanyName.AbpZeroTemplate
             configuration.CreateMap<CreateUserDelegationDto, UserDelegation>();
 
             /* ADD YOUR OWN CUSTOM AUTOMAPPER MAPPINGS HERE */
+
+            //Event
+            configuration.CreateMap<Event, EventOutput>();
+            configuration.CreateMap<CreateEventInput, Event>();
         }
     }
 }
