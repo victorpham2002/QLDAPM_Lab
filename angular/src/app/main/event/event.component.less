@@ -1,0 +1,34 @@
+.event-list {
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333; // Adjust color as needed
+        }
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #ccc; // Adjust border color and style as needed
+            &:last-child {
+                border-bottom: none; // Remove border for last row
+            }
+            &.header-row {
+                font-weight: bold;
+            }
+            .cell {
+                flex: 1;
+                padding: 10px;
+                text-align: center;
+                border-right: 1px solid #ccc; // Adjust border color and style as needed
+                &:last-child {
+                    border-right: none; // Remove border for last cell
+                }
+            }
+        }
+    }
+}

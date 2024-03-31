@@ -1,14 +1,23 @@
-<div [@routerTransition]>
-    <div class="m-subheader">
-        <div class="d-flex align-items-center">
-            <h3>
-                {{ 'Event' | localize }}
-            </h3>
+<div class="event-list" [@routerTransition]>
+    <div class="content d-flex flex-column flex-column-fluid">
+        <sub-header [title]="'Event List'"></sub-header>
+    </div>
+    <div class="modal-content">
+    <div class="table">
+        <div class="table-row header-row">
+            <div class="cell">Title</div>
+            <div class="cell">Description</div>
+            <div class="cell">Creation Time</div>
+            <div class="cell">End Date</div>
+            <div class="cell">Start Date</div>
+        </div>
+        <div *ngFor="let item of data" class="table-row">
+            <div class="cell">{{item.title}}</div>
+            <div class="cell">{{item.description}}</div>
+            <div class="cell">{{customDate(item.creationTime)}}</div>
+            <div class="cell">{{customDate(item.endDate)}}</div>
+            <div class="cell">{{customDate(item.startDate)}}</div>
         </div>
     </div>
-    <div class="m-content">
-        <div class="m-portlet__body">
-            Your event exist here.
-        </div>
-    </div>
+</div>
 </div>
