@@ -25,10 +25,10 @@ namespace MyCompanyName.AbpZeroTemplate.Masters.Events
             return ObjectMapper.Map<EventOutput>(eventEntity);
         }
 
-        public Task<EventOutput> GetEvent(int id)
+        public async Task<EventOutput> GetEvent(int id)
         {
-            var entity = _eventRepository.Get(id);
-            return Task.FromResult(ObjectMapper.Map<EventOutput>(entity));
+            var eventEntity = await _eventRepository.FirstOrDefaultAsync(id);
+            return ObjectMapper.Map<EventOutput>(eventEntity);
         }
 
         public async Task<IEnumerable<EventOutput>> GetEvents()
