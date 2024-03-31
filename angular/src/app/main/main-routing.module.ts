@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
     imports: [
@@ -7,13 +8,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: '',
                 children: [
+                    { path: 'event', component: EventComponent},
                     {
                         path: 'dashboard',
                         loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
                         data: { permission: 'Pages.Tenant.Dashboard' },
                     },
                     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-                    { path: '**', redirectTo: 'dashboard' },
+                    { path: '**', redirectTo: 'dashboard' }
                 ],
             },
         ]),
